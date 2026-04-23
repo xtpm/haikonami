@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kobeni.net</title>
+    <meta
+      name="description"
+      content="kobeni.net is an invite-only bio link service with a dark, curated profile system for aliases, artists, and private internet identities."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <div class="site-header-shell">
+          <a class="brand" href="#top" aria-label="kobeni.net home">
+            <span class="brand-mark"></span>
+            <span class="brand-text">kobeni.net</span>
+          </a>
+          <nav class="site-nav" aria-label="Primary">
+            <a href="#system">about</a>
+            <a href="#system">pricing</a>
+            <a href="#network">staff</a>
+          </nav>
+          <div class="site-header-actions">
+            <a class="header-link" href="#apply">log in</a>
+            <a class="header-cta" href="#apply">request invite</a>
+          </div>
+        </div>
+      </header>
+
+      <main id="top">
+        <section class="hero section">
+          <div class="hero-copy reveal">
+            <h1>everything about you, in one page.</h1>
+            <p class="hero-text">
+              kobeni.net is a private bio link service for aliases, artists,
+              labels, and internet identities that want something darker,
+              faster, and more controlled than a normal link page.
+            </p>
+            <form class="hero-claim" action="#apply">
+              <label class="sr-only" for="hero-handle">Profile handle</label>
+              <div class="hero-handle-field">
+                <span class="hero-handle-prefix">kobeni.net/</span>
+                <input
+                  id="hero-handle"
+                  name="handle"
+                  type="text"
+                  value="username"
+                  aria-label="Username"
+                />
+              </div>
+              <button type="submit" class="hero-claim-button">Claim your link</button>
+            </form>
+            <p class="hero-meta">NEXT WAVE / 24 SLOTS / 0PX RADIUS</p>
+          </div>
+
+        </section>
+
+        <section class="proof-strip">
+          <div class="proof-track">
+            <span>PRIVATE HANDLE RELEASES</span>
+            <span>NO ROUNDED CORNERS</span>
+            <span>FAST PROFILE EDITING</span>
+            <span>GREY / BLACK / RED</span>
+            <span>FOR ALIASES AND ARTISTS</span>
+            <span>PRIVATE HANDLE RELEASES</span>
+            <span>NO ROUNDED CORNERS</span>
+            <span>FAST PROFILE EDITING</span>
+          </div>
+        </section>
+
+        <section class="section feature-intro" id="system">
+          <div class="section-heading reveal">
+            <p class="eyebrow pricing-eyebrow">pricing</p>
+            <h2 class="pricing-title">dont have a invite?<br />no problem.</h2>
+            <p>
+              pick your access tier, secure your invite, and unlock the level
+              of profile control you want.
+            </p>
+          </div>
+          <div class="feature-rail">
+            <article class="feature-block reveal">
+              <p class="feature-index">invite</p>
+              <h3>$4</h3>
+              <p>
+                Buy an invite, claim your handle, and get access to the core
+                kobeni.net profile system.
+              </p>
+            </article>
+            <article class="feature-block reveal">
+              <p class="feature-index">premium</p>
+              <h3>$8/mo</h3>
+              <p>
+                More layout control, richer visuals, private sections, and more
+                ways to make the page feel like yours.
+              </p>
+            </article>
+            <article class="feature-block reveal">
+              <p class="feature-index">premium +</p>
+              <h3>$12/mo</h3>
+              <p>
+                Priority handles, advanced styling, gated links, and early
+                access to new profile modules and releases.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section split-showcase" id="network">
+          <div class="showcase-copy reveal">
+            <p class="eyebrow">PROFILE CONTROL</p>
+            <h2>Built around the page itself, not around widgets.</h2>
+            <p>
+              kobeni.net keeps the surface narrow and strict. Handle, links,
+              ordering, gate state, and atmosphere are the product. Everything
+              else gets out of the way.
+            </p>
+            <div class="metric-row">
+              <div class="metric">
+                <span>SETUP</span>
+                <strong>UNDER 3 MIN</strong>
+              </div>
+              <div class="metric">
+                <span>PROFILE RULE</span>
+                <strong>0PX RADIUS</strong>
+              </div>
+            </div>
+          </div>
+          <div class="showcase-pane reveal">
+            <div class="profile-preview">
+              <div class="preview-header">
+                <span>public page</span>
+                <span>kobeni.net/kobeni</span>
+              </div>
+              <div class="preview-body">
+                <p class="preview-handle">kobeni.exe</p>
+                <p class="preview-copy">
+                  archive account / visual edits open / drop list active
+                </p>
+                <ul class="preview-links">
+                  <li>store / commissions</li>
+                  <li>broadcast / updates</li>
+                  <li>music / archive</li>
+                  <li>private list / locked</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section testimonial-band">
+          <div class="section-heading reveal">
+            <p class="eyebrow">WHO IT'S FOR</p>
+            <h2>Made for people who actually care how their page feels.</h2>
+          </div>
+          <div class="testimonial-grid">
+            <article class="quote-card reveal">
+              <p>
+                "Most bio pages feel disposable. kobeni.net feels like a page
+                you would actually keep."
+              </p>
+              <span>Artist / alias account</span>
+            </article>
+            <article class="quote-card reveal">
+              <p>
+                "The layout is clean, fast, and severe in the right way. It
+                does not look like template soup."
+              </p>
+              <span>Label / private community</span>
+            </article>
+            <article class="quote-card reveal">
+              <p>
+                "It feels closer to a tool and closer to a scene site at the
+                same time."
+              </p>
+              <span>Designer / collector</span>
+            </article>
+          </div>
+        </section>
+
+        <section class="section apply-section" id="apply">
+          <div class="apply-copy reveal">
+            <p class="eyebrow">REQUEST ACCESS</p>
+            <h2>Join the next kobeni.net invite wave.</h2>
+            <p>
+              Access opens in small batches. Leave your email and we will send
+              an invite when the next release window goes live.
+            </p>
+          </div>
+          <form class="apply-form reveal">
+            <label for="email" class="sr-only">Email address</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="name@domain.com"
+              autocomplete="email"
+            />
+            <button type="submit" class="button button-primary">Join waitlist</button>
+          </form>
+        </section>
+
+        <footer class="site-footer">
+          <div class="site-footer-inner">
+            <div class="footer-brand-block reveal">
+              <a class="footer-brand" href="#top" aria-label="kobeni.net home">
+                <span class="footer-brand-mark"></span>
+                <span class="footer-brand-text">kobeni.net</span>
+              </a>
+              <div class="footer-socials" aria-label="Social links">
+                <a href="#apply">discord</a>
+                <a href="#apply">github</a>
+              </div>
+            </div>
+
+            <div class="footer-links reveal">
+              <div class="footer-column">
+                <h3>contact</h3>
+                <a href="#apply">abuse</a>
+                <a href="#apply">privacy</a>
+                <a href="#apply">support</a>
+              </div>
+              <div class="footer-column">
+                <h3>information</h3>
+                <a href="#apply">terms of service</a>
+                <a href="#apply">platform guidelines</a>
+                <a href="#apply">privacy policy</a>
+                <a href="#apply">faq</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="site-footer-bar reveal">
+            <p>© 2026 kobeni.net. all rights reserved.</p>
+          </div>
+        </footer>
+      </main>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
