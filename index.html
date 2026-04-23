@@ -18,6 +18,7 @@
   </head>
   <body>
     <div class="page-shell">
+      <canvas class="mouse-particles" aria-hidden="true"></canvas>
       <div class="bg-orb-1" aria-hidden="true"></div>
       <div class="bg-orb-2" aria-hidden="true"></div>
       <div class="bg-orb-3" aria-hidden="true"></div>
@@ -27,11 +28,11 @@
             <span class="brand-mark"></span>
             <span class="brand-text">kobeni.net</span>
           </a>
-          <nav class="site-nav" aria-label="Primary">
-            <a href="#system">about</a>
-            <a href="#system">pricing</a>
-            <a href="#network">staff</a>
-          </nav>
+            <nav class="site-nav" aria-label="Primary">
+              <a href="#about">about</a>
+              <a href="#system">pricing</a>
+              <a href="#network">staff</a>
+            </nav>
           <div class="site-header-actions">
             <a class="header-link" href="#apply">log in</a>
             <a class="header-cta" href="#apply">request invite</a>
@@ -62,7 +63,6 @@
               </div>
               <button type="submit" class="hero-claim-button">Claim your link</button>
             </form>
-            <p class="hero-meta">NEXT WAVE / 24 SLOTS / 0PX RADIUS</p>
           </div>
 
         </section>
@@ -87,10 +87,36 @@
           </div>
         </section>
 
+        <section class="section about-section" id="about">
+          <div class="about-layout">
+            <div class="section-heading reveal">
+              <p class="eyebrow about-eyebrow">about</p>
+              <h2 class="about-title"><span class="about-kicker">not&nbsp;your&nbsp;typical</span><br />bio&nbsp;link&nbsp;service.</h2>
+              <p>
+                kobeni.net is a private bio link service for aliases, artists,
+                collectives, and internet identities that want something more
+                controlled than a generic link page.
+              </p>
+            </div>
+            <div class="about-rotator reveal" data-rotator data-interval="3600" aria-label="Rotating preview gallery">
+              <img
+                class="about-rotator-image is-active"
+                src="./assets/about/meowmeow.png"
+                alt="kobeni.net rotating preview image 1"
+              />
+              <img
+                class="about-rotator-image"
+                src="./assets/about/meowmeow1.png"
+                alt="kobeni.net rotating preview image 2"
+              />
+            </div>
+          </div>
+        </section>
+
         <section class="section feature-intro" id="system">
           <div class="section-heading reveal">
             <p class="eyebrow pricing-eyebrow">pricing</p>
-            <h2 class="pricing-title">dont have a invite?<br />no problem.</h2>
+            <h2 class="pricing-title"><span class="pricing-kicker">dont have a invite?</span><br />no problem.</h2>
             <p>
               pick your access tier, secure your invite, and unlock the level
               of profile control you want.
@@ -127,43 +153,43 @@
         <section class="section staff-section" id="network">
           <div class="section-heading reveal">
             <p class="eyebrow">staff</p>
-            <h2 class="staff-title">the&nbsp;people&nbsp;behind<br />kobeni.net.</h2>
+              <h2 class="staff-title"><span class="staff-kicker">the&nbsp;people&nbsp;behind</span><br />kobeni.net</h2>
             <p>
               a small team shaping the platform, visuals, and release waves.
             </p>
           </div>
           <div class="feature-rail">
             <article class="feature-block reveal">
-              <p class="feature-index">founder</p>
+              <p class="feature-index staff-role">founder</p>
               <img class="staff-avatar" src="./assets/staff/tpm.jpg" alt="tpm profile picture" />
               <h3 class="staff-name">tpm</h3>
-              <p>
-                direction, releases, and overall vision for the platform.
-              </p>
+                <p>
+                  Leads the vision, direction, and identity of the platform from the ground up.
+                </p>
             </article>
             <article class="feature-block reveal">
-              <p class="feature-index">design</p>
+              <p class="feature-index staff-role">founder / developer</p>
               <img class="staff-avatar" src="./assets/staff/mke.png" alt="mke profile picture" />
               <h3 class="staff-name">mke</h3>
-              <p>
-                visual system, page styling, and profile experience updates.
-              </p>
+                <p>
+                  Blends leadership and development to shape the platform's systems, presentation, and experience.
+                </p>
             </article>
             <article class="feature-block reveal">
-              <p class="feature-index">ops</p>
+              <p class="feature-index staff-role">founder / developer</p>
               <img class="staff-avatar" src="./assets/staff/arturiafm.png" alt="arturiafm profile picture" />
               <h3 class="staff-name">arturiafm</h3>
-              <p>
-                invite handling, moderation, and keeping the network clean.
-              </p>
+                <p>
+                  Helps build and refine the platform through development, structure, and ongoing technical work.
+                </p>
             </article>
             <article class="feature-block reveal">
-              <p class="feature-index">dev</p>
+              <p class="feature-index staff-role">marketing</p>
               <img class="staff-avatar" src="./assets/staff/lennie.jpg" alt="lennie profile picture" />
               <h3 class="staff-name">lennie</h3>
-              <p>
-                site updates, frontend polish, and keeping the platform online.
-              </p>
+                <p>
+                  Drives marketing, presentation, and outreach to expand the platform's presence with intention.
+                </p>
             </article>
           </div>
         </section>
