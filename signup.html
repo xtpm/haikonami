@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kobeni.net sign up</title>
+    <meta
+      name="description"
+      content="Request an invite and create your kobeni.net account."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <canvas class="mouse-particles" aria-hidden="true"></canvas>
+      <div class="bg-orb-1" aria-hidden="true"></div>
+      <div class="bg-orb-2" aria-hidden="true"></div>
+      <div class="bg-orb-3" aria-hidden="true"></div>
+
+      <header class="site-header">
+        <div class="site-header-shell">
+          <a class="brand" href="./index.html" aria-label="kobeni.net home">
+            <span class="brand-mark"></span>
+            <span class="brand-text">kobeni.net</span>
+          </a>
+          <nav class="site-nav" aria-label="Primary">
+            <a href="./index.html#about">about</a>
+            <a href="./index.html#system">pricing</a>
+            <a href="./index.html#network">staff</a>
+          </nav>
+          <div class="site-header-actions">
+            <a class="header-link" href="./login.html">log in</a>
+            <a class="header-cta" href="./signup.html">sign up</a>
+          </div>
+        </div>
+      </header>
+
+      <main class="auth-main">
+        <section class="section auth-section">
+          <div class="auth-layout">
+            <div class="auth-copy reveal">
+              <p class="eyebrow">sign up</p>
+              <h1 class="auth-title">
+                <span class="auth-kicker">start your</span><br />
+                kobeni.net access
+              </h1>
+              <p class="auth-text">
+                request an invite, reserve your handle, and get ready to build
+                a profile that feels sharper than a normal bio page.
+              </p>
+              <p class="auth-inline-copy">
+                already have a invite code?
+                <a href="./register.html">register here.</a>
+              </p>
+            </div>
+
+            <form
+              class="auth-form reveal"
+              action="./signup.html"
+              data-auth-success="invite requested"
+            >
+              <p class="feature-index auth-panel-label">new account</p>
+              <h2>request invite</h2>
+
+              <label class="auth-field">
+                <span>email</span>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="name@domain.com"
+                  autocomplete="email"
+                />
+              </label>
+
+              <label class="auth-field">
+                <span>preferred handle</span>
+                <input
+                  type="text"
+                  name="handle"
+                  placeholder="kobeni.net/username"
+                  autocomplete="username"
+                />
+              </label>
+
+              <label class="auth-field">
+                <span>reason why you should be invited</span>
+                <input
+                  type="text"
+                  name="invite_reason"
+                  placeholder="tell us why you want in"
+                />
+              </label>
+
+              <div class="auth-row">
+                <label class="auth-check">
+                  <input type="checkbox" name="terms" />
+                  <span>i agree to the terms</span>
+                </label>
+                <a class="auth-inline-link" href="./index.html#system">view pricing</a>
+              </div>
+
+              <button type="submit" class="auth-submit">sign up</button>
+
+              <p class="auth-caption">
+                already have access? <a href="./login.html">go to login</a>
+              </p>
+            </form>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

@@ -18,6 +18,7 @@ document.querySelectorAll(".reveal").forEach((element) => {
 });
 
 const applyForm = document.querySelector(".apply-form");
+const authForm = document.querySelector(".auth-form, .login-form");
 
 if (applyForm) {
   applyForm.addEventListener("submit", (event) => {
@@ -33,6 +34,25 @@ if (applyForm) {
         button.textContent = originalLabel;
         button.disabled = false;
       }, 2400);
+    }
+  });
+}
+
+if (authForm) {
+  authForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const button = authForm.querySelector(".auth-submit, .login-submit");
+    const successLabel = authForm.dataset.authSuccess || "done";
+
+    if (button) {
+      const originalLabel = button.textContent;
+      button.textContent = successLabel;
+      button.disabled = true;
+
+      window.setTimeout(() => {
+        button.textContent = originalLabel;
+        button.disabled = false;
+      }, 1800);
     }
   });
 }

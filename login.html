@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kobeni.net login</title>
+    <meta
+      name="description"
+      content="Log in to kobeni.net to manage your private bio link profile."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="login-page">
+    <div class="page-shell">
+      <canvas class="mouse-particles" aria-hidden="true"></canvas>
+      <div class="bg-orb-1" aria-hidden="true"></div>
+      <div class="bg-orb-2" aria-hidden="true"></div>
+      <div class="bg-orb-3" aria-hidden="true"></div>
+      <main class="login-main">
+        <section class="login-panel reveal">
+          <a class="login-home" href="./index.html" aria-label="kobeni.net home">
+            <span class="brand-mark"></span>
+            <span class="brand-text">kobeni.net</span>
+          </a>
+
+          <div class="login-copy">
+            <p class="login-eyebrow">sign in to</p>
+            <h1 class="login-title">kobeni.net</h1>
+          </div>
+
+          <form
+            class="login-form"
+            action="./login.html"
+            data-auth-success="signed in"
+          >
+            <label class="login-field">
+              <span class="sr-only">email or user handle</span>
+              <input
+                type="text"
+                name="identity"
+                placeholder="email or user handle"
+                autocomplete="username"
+              />
+            </label>
+
+            <label class="login-field">
+              <span class="sr-only">password</span>
+              <input
+                type="password"
+                name="password"
+                placeholder="password"
+                autocomplete="current-password"
+              />
+            </label>
+
+            <button type="submit" class="login-submit">log in</button>
+
+            <p class="login-caption">
+              don’t have a account? <a href="./signup.html">sign up here.</a>
+            </p>
+          </form>
+        </section>
+
+        <section class="login-ambient" aria-hidden="true">
+          <div class="login-ambient-glow"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
