@@ -19,6 +19,122 @@ document.querySelectorAll(".reveal").forEach((element) => {
 
 const applyForm = document.querySelector(".apply-form");
 const authForm = document.querySelector(".auth-form, .login-form");
+const dashboardRoot = document.querySelector(".dashboard-page");
+const STORAGE_KEY = "kobeni.user";
+
+const safeStorage = {
+  get() {
+    try {
+      return window.localStorage.getItem(STORAGE_KEY);
+    } catch {
+      return null;
+    }
+  },
+  set(value) {
+    try {
+      window.localStorage.setItem(STORAGE_KEY, value);
+    } catch {
+      // ignore storage failures for static preview
+    }
+  },
+};
+
+const normalizeHandle = (value) => {
+  if (!value) {
+    return "kobeni";
+  }
+
+  return value
+    .toLowerCase()
+    .replace(/^kobeni\.net\//, "")
+    .replace(/[^a-z0-9._-]+/g, "")
+    .replace(/^\.+|\.+$/g, "") || "kobeni";
+};
+
+const createUid = () => "1";
+
+const readUserProfile = () => {
+  const raw = safeStorage.get();
+
+  if (!raw) {
+    return null;
+  }
+
+  try {
+    const parsed = JSON.parse(raw);
+
+    if (parsed && typeof parsed === "object") {
+      parsed.uid = "1";
+    }
+
+    return parsed;
+  } catch {
+    return null;
+  }
+};
+
+const writeUserProfile = (profile) => {
+  safeStorage.set(JSON.stringify(profile));
+};
+
+const buildProfileFromForm = (form, mode) => {
+  const data = new FormData(form);
+  const existing = readUserProfile();
+
+  if (mode === "register") {
+    const handle = normalizeHandle(data.get("handle"));
+
+    return {
+      uid: existing?.uid || createUid(),
+      handle,
+      email: String(data.get("email") || "").trim(),
+      tier: "registered",
+      state: "active",
+      previewMeta: "aliases / archive / visual",
+    };
+  }
+
+  const identity = String(data.get("identity") || "").trim();
+  const fallbackHandle = normalizeHandle(identity.includes("@") ? identity.split("@")[0] : identity);
+
+  return (
+    existing || {
+      uid: "1",
+      handle: fallbackHandle,
+      email: identity,
+      tier: "registered",
+      state: "active",
+      previewMeta: "aliases / archive / visual",
+    }
+  );
+};
+
+const hydrateDashboard = () => {
+  const profile = readUserProfile();
+
+  if (!dashboardRoot || !profile) {
+    return;
+  }
+
+  const handle = normalizeHandle(profile.handle);
+  const path = `kobeni.net/${handle}`;
+  const bindings = [
+    [document.querySelector("[data-user-handle]"), handle],
+    [document.querySelector("[data-user-handle-card]"), handle],
+    [document.querySelector("[data-user-tier]"), profile.tier || "registered"],
+    [document.querySelector("[data-user-uid]"), profile.uid || "UID pending"],
+    [document.querySelector("[data-user-uid-card]"), profile.uid || "UID pending"],
+    [document.querySelector("[data-user-preview-handle]"), handle],
+    [document.querySelector("[data-user-preview-meta]"), profile.previewMeta || "aliases / archive / visual"],
+    [document.querySelector("[data-user-state]"), profile.state || "active"],
+  ];
+
+  bindings.forEach(([node, value]) => {
+    if (node) {
+      node.textContent = value;
+    }
+  });
+};
 
 if (applyForm) {
   applyForm.addEventListener("submit", (event) => {
@@ -43,6 +159,11 @@ if (authForm) {
     event.preventDefault();
     const button = authForm.querySelector(".auth-submit, .login-submit");
     const successLabel = authForm.dataset.authSuccess || "done";
+    const redirectTarget = authForm.dataset.authRedirect;
+    const mode = authForm.dataset.authMode || "login";
+    const profile = buildProfileFromForm(authForm, mode);
+
+    writeUserProfile(profile);
 
     if (button) {
       const originalLabel = button.textContent;
@@ -50,12 +171,19 @@ if (authForm) {
       button.disabled = true;
 
       window.setTimeout(() => {
+        if (redirectTarget) {
+          window.location.href = redirectTarget;
+          return;
+        }
+
         button.textContent = originalLabel;
         button.disabled = false;
       }, 1800);
     }
   });
 }
+
+hydrateDashboard();
 
 const marquee = document.querySelector("[data-marquee]");
 

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kobeni.net dashboard</title>
+    <meta
+      name="description"
+      content="Manage your kobeni.net profile, links, and account from the dashboard."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="dashboard-page">
+    <div class="page-shell">
+      <canvas class="mouse-particles" aria-hidden="true"></canvas>
+      <div class="bg-orb-1" aria-hidden="true"></div>
+      <div class="bg-orb-2" aria-hidden="true"></div>
+      <div class="bg-orb-3" aria-hidden="true"></div>
+
+      <main class="dashboard-main">
+        <aside class="dashboard-sidebar reveal">
+          <a class="dashboard-brand" href="./index.html" aria-label="kobeni.net home">
+            <span class="brand-mark"></span>
+            <span class="brand-text">kobeni.net</span>
+          </a>
+
+          <div class="dashboard-sidebar-group">
+            <button class="dashboard-group-toggle" type="button">
+              <span>account</span>
+              <span>▾</span>
+            </button>
+            <nav class="dashboard-subnav" aria-label="Dashboard sections">
+              <a class="is-active" href="./dashboard.html">overview</a>
+              <a href="./dashboard.html">analytics</a>
+              <a href="./dashboard.html">badges</a>
+              <a href="./dashboard.html">settings</a>
+            </nav>
+          </div>
+
+          <nav class="dashboard-sidebar-links" aria-label="Workspace navigation">
+            <a href="./dashboard.html">customize</a>
+            <a href="./dashboard.html">links</a>
+            <a href="./dashboard.html">templates</a>
+          </nav>
+
+          <a class="dashboard-share" href="./dashboard.html">share your profile</a>
+
+          <div class="dashboard-user-card">
+            <span class="dashboard-user-mark">k</span>
+            <div>
+              <strong data-user-handle>kobeni.exe</strong>
+              <p data-user-uid>UID pending</p>
+            </div>
+          </div>
+        </aside>
+
+        <section class="dashboard-content">
+          <div class="dashboard-section-header reveal">
+            <h1>account overview</h1>
+          </div>
+
+          <div class="dashboard-metrics reveal">
+            <article class="dashboard-metric-card">
+              <p class="feature-index">username</p>
+                <strong data-user-handle-card>tpm</strong>
+              <span>change available now</span>
+            </article>
+            <article class="dashboard-metric-card">
+              <p class="feature-index">alias</p>
+              <strong>0 aliases used</strong>
+              <span>1 alias slot remaining</span>
+            </article>
+            <article class="dashboard-metric-card">
+              <p class="feature-index">uid</p>
+              <strong data-user-uid-card>1</strong>
+              <span data-user-state>joined and active</span>
+            </article>
+            <article class="dashboard-metric-card">
+              <p class="feature-index">profile views</p>
+              <strong>0</strong>
+              <span>+0 views since last 7 days</span>
+            </article>
+          </div>
+
+          <div class="dashboard-section-header reveal">
+            <h2>account statistics</h2>
+          </div>
+
+          <div class="dashboard-workspace">
+            <section class="dashboard-surface reveal">
+              <div class="dashboard-surface-head">
+                <h3>profile completion</h3>
+                <span>0% completed</span>
+              </div>
+
+              <div class="dashboard-progress">
+                <span class="dashboard-progress-bar"></span>
+              </div>
+
+              <div class="dashboard-alert">
+                <strong>your profile isn't complete yet!</strong>
+                <p>complete your profile to make it more discoverable and appealing.</p>
+              </div>
+
+              <div class="dashboard-task-grid">
+                <a href="./dashboard.html">upload an avatar</a>
+                <a href="./dashboard.html">add a description</a>
+                <a href="./dashboard.html">link discord account</a>
+                <a href="./dashboard.html">add socials</a>
+                <a href="./dashboard.html">reach 10 profile views</a>
+              </div>
+            </section>
+
+            <aside class="dashboard-sidepanel reveal">
+              <div class="dashboard-sidepanel-block">
+                <h3>manage your account</h3>
+                <p>change your email, username and more.</p>
+                <div class="dashboard-action-stack">
+                  <a href="./dashboard.html">change username</a>
+                  <a href="./dashboard.html">change display name</a>
+                  <a href="./dashboard.html">manage aliases</a>
+                  <a href="./dashboard.html">account settings</a>
+                </div>
+              </div>
+
+              <div class="dashboard-sidepanel-block">
+                <h3>connections</h3>
+                <p>link your Discord account to kobeni.net</p>
+                <a class="dashboard-connect" href="./dashboard.html">connect discord</a>
+              </div>
+            </aside>
+          </div>
+
+          <div class="dashboard-section-header reveal dashboard-section-inline">
+            <h2>account analytics</h2>
+            <a href="./dashboard.html">view more</a>
+          </div>
+
+          <div class="dashboard-analytics-grid reveal">
+            <section class="dashboard-analytics-card">
+              <h3>visitor devices in the last 7 days</h3>
+              <div class="dashboard-empty-graph"></div>
+            </section>
+            <section class="dashboard-analytics-card">
+              <h3>profile views in the last 7 days</h3>
+              <div class="dashboard-empty-graph"></div>
+            </section>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
